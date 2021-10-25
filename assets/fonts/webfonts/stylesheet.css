@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'MoonTime';
+    src: url('MoonTime-Regular.ttf') format('truetype'),
+    url('MoonTime-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Glacial-Indifference';
+    src: url('GlacialIndifference-Regular.woff') format('woff'),
+    url('GlacialIndifference-Regular.woff2') format('woff2'),
+    url('GlacialIndifference-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Glacial-Indifference-Bold';
+    src: url('GlacialIndifference-Bold.woff') format('woff'),
+    url('GlacialIndifference-Bold.woff2') format('woff2'),
+    url('GlacialIndifference-Bold.ttf') format('truetype');
+}

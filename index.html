@@ -1,0 +1,43 @@
+<html>
+<include src="src/partials/head.html"></include>
+    
+<body>
+    <main>
+        
+        <div id="header" class="container">
+            <div class="button button-menu">
+                <img class="button" id="logo" src="assets/images/logo.png" style="width: 100px;" alt="open menu">
+                <!-- <img class="button" id="hover" src="assets/images/logo-inverse.png" style="width: 100px;" alt="open menu"> -->
+                <img class="button" id="close" src="assets/images/cross.PNG" alt="close">
+            </div>
+            <h1><span class="upper" id="firstlogo">d</span>ev<span class="upper" id="secondlogo">d</span>ee<span class="upper" id="thirdlogo">z</span></h1>
+            <div class="slogan">
+                <h2 class="upper" id="first">développement & design de sites web</h2>
+                <h2 class="upper" id="second">faire de votre projet une réalité</h2>
+            </div>
+        </div>
+
+        <include src="src/partials/nav.html"></include>
+        
+        <div id="presentation" class="container">
+            <p>DevDizZ est une société développant appli et site web pour les professionnels comme pour les particuliers.</p>
+            <p>A l’aide d’outil comme Figma et VSC mais aussi notre savoir faire nous transformerons vos attentes en un cahier des charges puis en une maquette pour mettre des mots sur vos idées et des images sur ces mots. Ensuite viens l’étape du développement du software pour un déploiement et une livraison dans les meilleures conditions possibles.</p>
+            <p>Nous vous invitons à consulter notre PortFolio pour voir nos réalisations mais aussi notre catalogue pour des livraisons en un temps record ! </p>
+        </div>
+
+        <div id="portfolio" class="container">
+            <ul>
+                <li><img src="assets/images/testportfolio1.png" alt="portfolio1"></li>
+                <li><img src="assets/images/testportfolio2.jpg" alt="portfolio2"></li>
+                <li><img src="assets/images/testportfolio3.jpg" alt="portfolio3"></li>
+            </ul>
+        </div>
+        
+        <canvas id="background"></canvas>
+        
+        <include src="src/partials/footer.html"></include>
+        
+    </main>
+    <script src="src/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* Theming */
+
+$bg-logo-color: #291b25;    /* Dark-brown */
+$primary-color: #51abb2;  /* Light-blue */
+$secondary-color: #f14902;  /* Orange */
+$bg-color: #dacaa4;  /* Beige */
+
+
+
+body {
+  overflow-y: hidden;
+  background-color: $bg-logo-color;
+
+  main {
+
+    position: absolute;
+    padding: 0 0;
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    .upper{
+      text-transform: uppercase;
+    }
+
+    .button{
+      :hover{
+        border-color: $secondary-color;
+      }
+    }
+
+  }
+}
+
+
+@mixin xs {
+  @media (max-width: 599px) { @content; }
+}
+@mixin sm {
+  @media (min-width: 600px) { @content; }
+}
+@mixin md {
+  @media (min-width: 900px) { @content; }
+}
+@mixin lg {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin xl {
+  @media (min-width: 1800px) { @content; }
+}
+@mixin screen-min($width) {
+  @media (min-width:$width) { @content }
+}
+
+
+
+
+

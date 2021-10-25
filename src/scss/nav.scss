@@ -1,0 +1,94 @@
+@import 'scss/base';
+@import '../assets/fonts/webfonts/stylesheet.css';
+
+#nav-w {
+    grid-column: 1/span 2 ;
+    z-index: 10;
+    position: relative;
+    font-size: 250%;
+    font-family: 'Glacial-Indifference';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    transform: translate3d(-350px,0,0) ;
+    transition: transform 700ms ease-in-out;
+    
+
+    .nav{
+        color: $primary-color;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        padding-left: 3px;
+        padding-right: 27px;
+        justify-content: center;
+        align-items: center;
+        background: -moz-linear-gradient(left, $bg-logo-color 90%, invert($bg-color, 60%) 100% );
+        border-left: 3px solid $primary-color;
+        transform: translate3d(0,0,0);
+        border-radius: 0px;
+        
+        transition: color 1000ms, transform 1000ms ease-out, border-left 1000ms ease-in, border-radius 1000ms;
+    }        
+}
+
+body.menu-open {
+    #background {
+        filter: invert(60%);
+        transform: translate3d(100px,0,0);
+        
+        transition: transform 1000ms, filter 500ms;
+
+    }
+
+    #nav-w {
+        color: $primary-color;
+        transform: translate3d(0px,0,0) ;
+        transition: transform 500ms ease-in-out, filter 700ms;
+
+        .nav:hover{
+            font-family: 'Glacial-Indifference-Bold';
+            padding-right: 23px;
+            color: $secondary-color  ;
+            transform: translate3d(20px,0,0);
+            border-left: 7px solid $secondary-color;
+            border-radius: 25px;
+
+
+            transition:transform 500ms, color 500ms, border-left 500ms, border-radius 100ms;
+
+        }
+    }
+
+    #header{
+
+        .button-menu{
+            border-bottom: 3px solid $primary-color;
+            
+
+            #logo{
+                z-index: 0;
+                transform: rotateY(-180deg);
+                filter: opacity(0%);
+
+                transition: filter 700ms, transform 700ms;
+    
+            }
+
+            #close{
+                z-index: 0;
+                transform: rotateY(180deg);
+                filter: opacity(100%);
+
+                transition: filter 700ms, transform 700ms;
+    
+            }
+        }
+        h1{
+            border-left: 3px solid $primary-color;
+            transition: border-left 500ms;
+        }
+    }  
+}
+

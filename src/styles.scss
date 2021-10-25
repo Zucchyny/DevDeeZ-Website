@@ -1,0 +1,15 @@
+@import 'scss/reset';
+@import 'scss/base';
+@import 'scss/beaver';
+@import 'scss/nav';
+@import 'scss/footer';
+@import 'scss/header';
+
+@import '../assets/fonts/webfonts/stylesheet.css';
+
+
+
+#presentation{
+    background-color: rgb(28, 59, 117);
+    grid-column: 2 / 8;
+}
