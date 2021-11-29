@@ -8,5 +8,5 @@
 
     transform: translate3d(0px,0px,0px);    
     filter: invert(0%);
-    transition: transform 1000ms, filter 700ms;
+    transition: transform 1000ms ease-in-out, filter 700ms ease-in-out;
 }
