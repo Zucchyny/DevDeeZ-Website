@@ -6,6 +6,11 @@ npm run start
 
 And then go to `localhost:1234`
 
+# DevDeeZ Website
+This is devdeez website code, DevDeeZ is a development company manage by Tristan Fourot.
+
+https://www.devdeez.fr
+
 # Handling changes
 If you need to change things such as navbar for example, you will find all the reusable component througout the pages in the folder : `/src/partials`.
 Change the html here and modifiy the css in the good file in `/src/scss`.
@@ -15,11 +20,7 @@ If you have run : `npm run start`, parcels has an excellent hot reload except if
 
 
 # Benjamin Code
-This is the a quick start project made and used by Benjamin Code to quickly experiment stuffs when he's trying to replicate cool effects he sees on the web.
-
-It's also the project he uses for his Twitch livestreams.
-
-A real project was made with this quick starter:
+This was a quick start project made and used by Benjamin Code. 
 
 https://benjamincode.tv
 
