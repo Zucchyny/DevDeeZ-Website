@@ -4,22 +4,31 @@ $bg-logo-color: #291b25;    /* Dark-brown */
 $primary-color: #51abb2;  /* Light-blue */
 $secondary-color: #f14902;  /* Orange */
 $bg-color: #dacaa4;  /* Beige */
+$bg-color-invert: invert($bg-color, 60%); /* Blue-Gray */
 
 
 
 body {
   overflow-x: hidden;
   overflow-y: scroll;
-  background-color: $bg-logo-color;
+
+  background-color: $bg-color-invert;
+  color: white;
+  scroll-behavior: smooth;
 
   main {
-
     position: absolute;
-    padding: 0 0;
     width: 100vw;
+    padding: 0 0;
 
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr;
+    // display: grid;
+    // grid-template-columns: repeat(12, 1fr);
+
+    .container{
+      z-index: 10;
+    }
 
     .upper{
       text-transform: uppercase;
@@ -54,7 +63,37 @@ body {
   @media (min-width:$width) { @content }
 }
 
+@mixin recolor($color: #000, $opacity: 1) {
+  $r: red($color) / 255;
+  $g: green($color) / 255;
+  $b: blue($color) / 255;
+  $a: $opacity;
 
+  // grayscale fallback if SVG from data url is not supported
+  $lightness: lightness($color);
+  filter: saturate(0%) brightness(0%) invert($lightness) opacity($opacity);
 
+  // color filter
+  $svg-filter-id: "recolor";
+  filter: url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg">\
+      <filter id="#{$svg-filter-id}" color-interpolation-filters="sRGB">\
+        <feColorMatrix type="matrix" values="\
+          0 0 0 0 #{$r}\
+          0 0 0 0 #{$g}\
+          0 0 0 0 #{$b}\
+          0 0 0 #{$a} 0\
+        "/>\
+      </filter>\
+    </svg>\
+    ##{$svg-filter-id}');
+}
 
-
+@keyframes rotate360 {
+  from {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, -360deg);
+  }
+}

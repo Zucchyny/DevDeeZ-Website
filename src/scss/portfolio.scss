@@ -1,0 +1,162 @@
+@import 'scss/base';
+@import '../assets/fonts/webfonts/stylesheet.css';
+
+#portfolioContainer{
+    position: relative;
+    top: 3000px ;
+    z-index: 4;
+
+    width: 90%;
+    height: 1000px;
+    perspective: 3000px;
+    perspective-origin: center;
+
+    grid-column: 2 / 6;
+    justify-self: center;
+
+    transform: translate3d(0,0,0);
+        
+    transition: transform 1000ms ease-in-out;
+
+    .carouselContainer{
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        height: max-content;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d; 
+        animation: rotate360 40s infinite linear;
+
+        .carousel{
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            transition: height 1000ms, width 1000ms;
+
+            .logo{
+                height: 200px;
+                width: 200px;
+            }
+            .soon{
+                cursor: default;
+                height: 100px;
+                width: 100px;
+            }
+            .titre{
+                font-family: 'Glacial-Indifference';
+                font-size: 12;
+                color: $bg-logo-color;
+                width: fit-content;
+                text-align: center;
+            }
+
+            #lsn{
+                font-family: 'Helvetica' ;
+                font-size: 130%;
+                font-weight: bold;
+                color: #a8341d;
+            }
+
+            #devdeez{
+                font-family: 'MoonTime' ;
+                font-size: 300%;
+
+                #firstlogo{
+                    color: $primary-color;
+                }
+
+                #thirdlogo{
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        li:nth-child(1) {
+            transform: rotateY(0deg) translateZ(400px); 
+        }
+        li:nth-child(2) { 
+            transform: rotateY(45deg) translateZ(400px); 
+        }
+        li:nth-child(3) {
+            transform: rotateY(90deg) translateZ(400px); 
+        }
+        li:nth-child(4) {
+            transform: rotateY(135deg) translateZ(400px); 
+        }
+        li:nth-child(5) {
+            transform: rotateY(180deg) translateZ(400px); 
+        }
+        li:nth-child(6) {
+            transform: rotateY(225deg) translateZ(400px); 
+        }
+        li:nth-child(7) {
+            transform: rotateY(270deg) translateZ(400px); 
+        }
+        li:nth-child(8) {
+            transform: rotateY(315deg) translateZ(400px); 
+        }
+    }
+
+    .captureList{
+        .portfolio{
+            position: relative;
+            top: 400px;
+            height: 80vh;
+            width: 100%;
+    
+            display:none;
+            filter: opacity(0%);
+            flex-direction: column;
+            align-items: center;
+    
+            border: ridge 40px $bg-logo-color;
+            background-color: #ffffffcc;
+
+            .visit{
+                z-index: 2;
+                position: absolute;
+                bottom: -40px;
+                justify-self: center;
+                cursor: pointer;
+                border-top: inset 5px $bg-logo-color;
+                border-left: inset 5px $bg-logo-color;
+                border-right: outset 5px $bg-logo-color;
+                border-bottom: outset 5px $bg-logo-color;
+                border-radius: 10px;
+                padding: 5px;
+                height: 40px;
+                width: 30%;
+                background-color: $primary-color;
+                font-family: 'Glacial-Indifference';
+                font-size: 18;
+            }
+
+            .visit:hover{
+                border-top: outset 5px $bg-logo-color;
+                border-left: outset 5px $bg-logo-color;
+                border-right: inset 5px $bg-logo-color;
+                border-bottom: inset 5px $bg-logo-color;
+                background-color: $secondary-color;
+            }
+        }
+
+        .selected{
+            display: flex;
+
+            filter: opacity(100%);
+
+            transition: filter 50000ms ease-in-out;
+        }
+    }
+}

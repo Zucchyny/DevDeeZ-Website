@@ -1,0 +1,36 @@
+@import 'scss/base';
+@import '../assets/fonts/webfonts/stylesheet.css';
+
+
+#info{
+    position: absolute;
+    top: 994px;
+    left: 65px;
+    width: 100%;
+    height: max-content;
+    z-index: 3;
+
+    grid-column: 1 / 4;
+
+    background: $bg-logo-color;
+    padding: 20px;
+    border: 70px ridge $bg-logo-color;
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 35px;
+
+    transform: translate3d(0,0,0);
+        
+    transition: transform 1000ms ease-in-out;
+
+    p{
+        position: relative; 
+
+        font-family: 'Glacial-Indifference';
+        font-size: 25;
+        width: 100%;
+        text-align: justify;
+        text-indent: 50px;
+        line-height: 51px;
+    }
+}
+

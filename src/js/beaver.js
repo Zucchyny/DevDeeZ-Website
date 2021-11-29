@@ -14,12 +14,10 @@ export default class Beaver {
     constructor() {
 
         let camera, scene, renderer, mesh1, mesh2;
-
-		let parent;
+        let parent;
+		let composer;
 
 		const meshes = [];
-
-		let composer;
 
         let mouseX = 0, mouseY = 0;
 
@@ -37,7 +35,7 @@ export default class Beaver {
             const container = document.querySelector('#background');
 
             camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1,10000);
-            camera.position.set(-500, 300, 500);
+            camera.position.set(0, 0, 700);
             
             scene = new THREE.Scene();
             scene.background = new THREE.Color( 0xdacaa4 );
@@ -78,7 +76,7 @@ export default class Beaver {
                 
                     const positions = combineBuffer(obj, 'position');
     
-                    createMesh(positions, scene, -500, -100, 0, 0x51abb2 );
+                    createMesh(positions, scene, -441, -100, 0, 0x51abb2 );
                 }, function(xhr){
                     console.log((xhr.loaded/xhr.total*100) +'%obj loaded');
                 }, function(error){

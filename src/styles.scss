@@ -4,12 +4,7 @@
 @import 'scss/nav';
 @import 'scss/footer';
 @import 'scss/header';
+@import 'scss/about';
+@import 'scss/portfolio';
 
 @import '../assets/fonts/webfonts/stylesheet.css';
-
-
-
-#presentation{
-    background-color: rgb(28, 59, 117);
-    grid-column: 2 / 8;
-}
