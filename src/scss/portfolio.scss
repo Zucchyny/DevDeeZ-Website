@@ -271,12 +271,13 @@
 
 
     .listSecondDevice{
-        @include xs {
-            display: none;
+        display: none;
+        @include md {
+            display:flex;
         }
         .portfolio{
             position: absolute;
-            top: 500px;
+            top: 600px;
             right: -30px;
             height: 520px;
             width: 305px;
@@ -293,10 +294,6 @@
             border-bottom: outset 50px $bg-logo-color;
             border-radius: 20px;
             background-color: #ffffffcc;
-            
-            @include xs {
-                display: none;
-            }
 
             .visit{
                 z-index: 2;
