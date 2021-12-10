@@ -3,8 +3,8 @@ export default class Navbar {
         let carousel = document.querySelector('.carouselContainer');
         let nbChild=carousel.getElementsByTagName('LI').length ;
 
-        var pSelected = null;
-        console.log(nbChild);
+        var pSelected = 1;
+        console.log('init Portfolio');
         init();
         
 
@@ -22,24 +22,29 @@ export default class Navbar {
                 let selected = '#choix'+i;
                 window['btnPortfolio'+i]=document.querySelector(selected);
             }
+            selectedPortfolio(1);
         }
 
         function selection(i) {
-            if(pSelected !== i & pSelected !== null){
-                selectedPortfolio(pSelected);
-            }
-            if(pSelected == i ){
-                pSelected = null;
-            } else {
+            if(pSelected !== i ){
+                selectedPortfolio(pSelected); 
+                selectedPortfolio(i);
                 pSelected = i;
-            }
-            selectedPortfolio(i);
+            } 
         }
 
         function selectedPortfolio(i) {
-            let selected = '#site'+i;
-            let element = document.querySelector(selected);
-            element.classList.toggle("selected");
+            // ---- TOGGLE ON MAIN DEVICE ----- //
+            let selectedMainDevice = '#site'+i;
+            let elementMain = document.querySelector(selectedMainDevice);
+            elementMain.classList.toggle("selected");
+
+            // ---- TOGGLE ON SECONDARY DEVICE ----- //
+            let j = i+8;
+            let selectedSecondDevice = '#site'+j;
+            let elementSecondary = document.querySelector(selectedSecondDevice);
+            elementSecondary.classList.toggle("selected");
+
         }
     }
 }
