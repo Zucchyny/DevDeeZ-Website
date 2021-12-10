@@ -4,33 +4,90 @@
 
 #info{
     position: absolute;
-    top: 994px;
-    left: 65px;
+    top: 990px;
     width: 100%;
     height: max-content;
     z-index: 3;
 
-    grid-column: 1 / 4;
+    grid-column: 1 / 5;
 
     background: $bg-logo-color;
-    padding: 20px;
-    border: 70px ridge $bg-logo-color;
-    border-top-right-radius: 70px;
-    border-bottom-right-radius: 35px;
+    padding: 10px;
+    border-top: inset 20px $bg-logo-color;
+    border-left: inset 20px $bg-logo-color;
+    border-right: outset 20px $bg-logo-color;
+    border-bottom: outset 20px $bg-logo-color;
+    border-radius: 10px;
+    
+    @include xs {
+        z-index: 4;
+        width: 95%;
+        
+        grid-column: 1 / 6;
+    }
+    @include sm {
+        left: 98px;
+    }
+    @include md {
+        left: 95px;
+        padding: 20px;
+        border-top: inset 35px $bg-logo-color;
+        border-left: inset 35px $bg-logo-color;
+        border-right: outset 35px $bg-logo-color;
+        border-bottom: outset 35px $bg-logo-color;
+        border-top-right-radius: 35px;
+        border-bottom-right-radius: 35px;
+    }
+    @include lg {
+        grid-column: 1 / 4;
+    }
 
     transform: translate3d(0,0,0);
         
     transition: transform 1000ms ease-in-out;
 
+    h2{
+        position: absolute; 
+        top: -78px;
+        right: 20px;
+
+        background: $bg-logo-color;
+        padding: 10px;
+        border-top: inset 20px $bg-logo-color;
+        border-left: inset 20px $bg-logo-color;
+        border-right: outset 20px $bg-logo-color;
+        border-radius: 10px;
+
+        font-family: 'Glacial-Indifference';
+        font-size: 30;
+        font-weight: bold;
+
+        @include md {
+            top: -90px;
+            font-size: 40;
+        }
+        @include xs {
+            top: -65px;
+            font-size: 20;
+        }
+    }
+
     p{
         position: relative; 
 
         font-family: 'Glacial-Indifference';
-        font-size: 25;
+        font-size: 15;
         width: 100%;
         text-align: justify;
         text-indent: 50px;
         line-height: 51px;
+
+        @include md {
+            font-size: 20;
+        }
+        @include lg {
+            font-size: 25;
+        }
     }
 }
 

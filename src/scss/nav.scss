@@ -13,7 +13,7 @@ aside {
         position: fixed;
         width: 321px;
         top: -76px;
-        left: 102px;
+        left: 72px;
         z-index: 3;
         
         transition: z-index 0ms 930ms;
@@ -37,15 +37,23 @@ aside {
         transform: translate3d(calc( 107px + (-1*(100vw - 100px) / 4)),0,0) ;
     
         transition: transform 1000ms ease-in-out, border-right 1000ms;
+
+        @include xs {
+            width: calc((100vw - 50px));
+            transform: translate3d(calc( 77px +(-1*(100vw - 50px))),0,0) ;
+        }
     
     
         #nav-w {
             position: sticky;
             top: 100px;
             grid-column: 1/3 ;
-            min-width: 250px;
             width: 100%;
             z-index: 2;
+
+            @include xs {
+               top: 114px;
+            }
             
             display: flex;
             flex-direction: column;
@@ -62,6 +70,10 @@ aside {
             .nav {
                 width: 100%;
                 height: 100%;
+
+                @include xs {
+                    height: calc((100% - 14px) / 3);
+                }
     
                 display: flex;
                 left: 0px;
@@ -69,7 +81,7 @@ aside {
                 justify-content: center;
                 align-items: center;
                 padding-left: 3px;
-                padding-right: 27px;
+                padding-right: 3px;
                 background-clip: border-box;
     
                 color: transparent;
@@ -92,7 +104,11 @@ body.menu-open {
     }
 
     #info {
-        transform: translate3d(calc((100vw - 523px) / 4), 0, 0);
+        transform: translate3d(calc((100vw - 523px)/4), 0, 0);
+
+        @include xs{
+            transform: translate3d(calc((100vw - 73px)), 0, 0);
+        }
         
         transition: transform 500ms ease-in-out;
     }
@@ -102,60 +118,73 @@ body.menu-open {
         
         transition: transform 500ms ease-in-out;
     }
-        
-    .button-menu {
-        border-bottom: 3px solid $primary-color;
-
-        transition: border-bottom 700ms;
-
-        #menu {
-            z-index: 0;
-
-            transform: rotateY(0deg);
-            
-            transition: transform 250ms 200ms ease-out; 
-        }
-
-        #logo {
-            filter: opacity(0%);
-        }
-
-        
-        #close {
-            z-index: -1;
-            filter: opacity(100%);
-
-            transform: rotateY(90deg);
-            
-            transition: transform 250ms ease-in;
-        }
-    }
     
-    .button-menu:hover {
-        #menu {
-            transform: rotateY(90deg);
-
-            transition: transform 250ms ease-in;
+    header{
+        .button-menu {
+            border-bottom: 3px solid $primary-color;
+    
+            transition: border-bottom 700ms;
+    
+            #menu {
+                z-index: 0;
+    
+                transform: rotateY(0deg);
+                
+                transition: transform 250ms 200ms ease-out; 
+            }
+    
+            #logo {
+                filter: opacity(0%);
+            }
+    
+            
+            #close {
+                z-index: -1;
+                filter: opacity(100%);
+    
+                transform: rotateY(90deg);
+                
+                transition: transform 250ms ease-in;
+            }
+        }
+        
+        .button-menu:hover {
+            #menu {
+                transform: rotateY(90deg);
+    
+                transition: transform 250ms ease-in;
+            }
+    
+            #close {
+                transform: rotateY(180deg);
+    
+                transition: transform 250ms 200ms ease-out;
+            }
+        }
+    
+        h1 {
+            border-left: 3px solid $primary-color;
+    
+            transition: border-left 500ms;
         }
 
-        #close {
-            transform: rotateY(180deg);
+        .slogan {
+            @include xs{
+                border-left: 3px solid $primary-color;
 
-            transition: transform 250ms 200ms ease-out;
+                transition: border-left 500ms ease-in;
+            }
         }
     }
 
-    h1 {
-        border-left: 3px solid $primary-color;
 
-        transition: border-left 500ms;
-    }
     aside {
         #gear {
             z-index: 2;
             transition: z-index 0ms
         }
-        #nav-container {
+        #nav-container {           
+            min-width: 230px;
             transform: translate3d(0px,0,0) ;
             color: $primary-color;
     
@@ -168,6 +197,7 @@ body.menu-open {
     
                 .nav{             
                     pointer-events: visible;
+                    cursor: pointer;
     
                     color: $primary-color;
                     transform: translate3d(0,0,0);

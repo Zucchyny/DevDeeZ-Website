@@ -63,7 +63,7 @@ export default class Navbar {
                         behavior: "smooth"
                     });                 
                 } else if (scrollTo == 'toPortfolio') {
-                    let style= getComputedStyle(portfolio);
+                    let style= getComputedStyle(portfolioContainer);
                     elementPosition = parseInt(style.top);
                     offsetPosition = elementPosition - headerOffset - 50;
                     
