@@ -8,15 +8,17 @@ aside {
     grid-template-columns: 106px 1fr;
 
     #gear {
-        @include recolor($secondary-color);
-
         position: fixed;
         width: 321px;
         top: -76px;
-        left: 72px;
+        left: 101px;
         z-index: 3;
         
         transition: z-index 0ms 930ms;
+
+        @include xs {
+            left: 72px;
+        }
     }
     
     #nav-container {
@@ -27,7 +29,7 @@ aside {
         left: 0;
         width: calc((100vw - 100px) / 4);
         z-index: 4;
-        height: 4500px;
+        height: 3500px;
         background-color: $bg-logo-color;
         
         
