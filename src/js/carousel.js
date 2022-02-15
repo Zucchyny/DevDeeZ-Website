@@ -11,10 +11,10 @@ export default class Navbar {
         btnPortfolio1.addEventListener('click', () => {selection(1);});
         // btnPortfolio2.addEventListener('click', () => {selection(2);});
         // btnPortfolio3.addEventListener('click', () => {selection(3);});
-        // btnPortfolio4.addEventListener('click', () => {selection(4);});
-        btnPortfolio5.addEventListener('click', () => {selection(5);});
+        btnPortfolio4.addEventListener('click', () => {selection(4);});
+        // btnPortfolio5.addEventListener('click', () => {selection(5);});
         // btnPortfolio6.addEventListener('click', () => {selection(6);});
-        // btnPortfolio7.addEventListener('click', () => {selection(7);});
+        btnPortfolio7.addEventListener('click', () => {selection(7);});
         // btnPortfolio8.addEventListener('click', () => {selection(8);});
 
         function init() {
