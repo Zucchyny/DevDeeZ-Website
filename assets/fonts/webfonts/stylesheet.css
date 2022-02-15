@@ -17,3 +17,8 @@
     url('GlacialIndifference-Bold.woff2') format('woff2'),
     url('GlacialIndifference-Bold.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'IndieFlower';
+    src: url('IndieFlower-Regular.ttf') format('truetype');
+}

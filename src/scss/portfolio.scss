@@ -121,6 +121,18 @@
                     font-size: 6vw;
                 }
             }
+
+            #chatpos{
+                cursor: pointer;
+                font-family: 'IndieFlower' ;
+                font-size: 2vw;;
+                font-weight: bold;
+                color: #59665d;
+                
+                @include xs {
+                    font-size: 6vw;
+                }
+            }
         }
         
         .empty{
@@ -287,9 +299,8 @@
             position: absolute;
             top: 600px;
             right: -30px;
-            height: 520px;
-            width: 305px;
-
+            height: 640px;
+            width: 365px;
             
             display:none;
             filter: opacity(0%);
@@ -299,17 +310,16 @@
             border-top: inset 20px $bg-logo-color;
             border-left: inset 20px $bg-logo-color;
             border-right: outset 20px $bg-logo-color;
-            border-bottom: outset 50px $bg-logo-color;
+            border-bottom: outset 70px $bg-logo-color;
             border-radius: 20px;
             background-color: #ffffffcc;
-
         }
 
         .visit{
             z-index: 1;
             position: absolute;
-            right: 100px; 
-            bottom: -115px;
+            right: 127px; 
+            bottom: -230px;
             cursor: pointer;
             border-top: outset 5px $bg-logo-color;
             border-left: outset 5px $bg-logo-color;
@@ -317,8 +327,8 @@
             border-bottom: inset 5px $bg-logo-color;
             border-radius: 15px;
             padding: 5px;
-            height: 40px;
-            width: 40px;
+            height: 50px;
+            width: 50px;
             background-color: $primary-color;
         }
 
@@ -333,6 +343,8 @@
 
         .selected{
             display: flex;
+            
+            overflow: hidden;
 
             filter: opacity(100%);
 
