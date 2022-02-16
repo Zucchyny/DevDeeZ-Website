@@ -97,3 +97,16 @@ body {
     transform: rotate3d(0, 1, 0, -360deg);
   }
 }
+
+@keyframes blur360 {
+  0% {
+    filter: blur(0px);
+  }
+  50% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+

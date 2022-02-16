@@ -1,0 +1,120 @@
+#loader{
+    height: 100vh;
+    width: 100%;
+    color: $bg-color;
+    position: fixed;
+    z-index: 10000;
+
+    display: flex;
+
+    #loaderLeft{
+        background: $bg-logo-color;
+        height: 100vh;
+        width: 50%;
+
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        #loading{
+            display: flex;
+            width: 50%;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            position: relative;
+            right: -21px;
+
+            font-family: 'Glacial-Indifference';
+            font-size: 60;
+
+            text-align: center;
+            line-height: normal;
+    
+    
+            li:nth-child(1) {
+                animation: blur360 3s ease 0000ms infinite; 
+            }
+            li:nth-child(2) { 
+                animation: blur360 3s ease 0200ms infinite; 
+            }
+            li:nth-child(3) {
+                animation: blur360 3s ease 0400ms infinite; 
+            }
+            li:nth-child(4) {
+                animation: blur360 3s ease 0600ms infinite; 
+            }
+        }
+    }
+
+    #loaderRight{
+        background: $bg-logo-color;
+        height: 100vh;
+        width: 50%;
+
+        display: flex;
+        justify-content: start;
+        align-items: center;        
+
+        z-index: 1;
+
+        #loading{
+            display: flex;
+            width: 50%;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            position: relative;
+            left: -21px;
+
+            font-family: 'Glacial-Indifference';
+            font-size: 60;
+            text-align: center;
+    
+    
+            li:nth-child(1) {
+                animation: blur360 3s ease 0600ms infinite; 
+            }
+            li:nth-child(2) { 
+                animation: blur360 3s ease 0800ms infinite; 
+            }
+            li:nth-child(3) {
+                animation: blur360 3s ease 1000ms infinite; 
+            }
+            li:nth-child(4) {
+                animation: blur360 3s ease 1200ms infinite; 
+            }
+        }
+    }
+}
+
+.loaded{
+    z-index: -10000;
+    #loaderLeft{
+        background: -moz-linear-gradient();
+        transform-origin: center left;
+        transform: rotate3d(0,1,0,-90deg);
+        transition: border-right 200ms cubic-bezier(1,.02,.32,1) 2000ms,
+            transform 2000ms cubic-bezier(1,.02,.32,1) 2000ms;
+
+        #loading{
+            li:nth-child(4) {
+                transform: rotate3d(0,0,1,180deg);
+                transition: transform 1000ms ease-in-out;
+            }
+        }
+    }
+
+    #loaderRight{
+        transform-origin: center right;
+        transform: rotate3d(0,1,0,90deg);
+        transition: transform 2000ms cubic-bezier(1,.02,.32,1) 2000ms;
+
+        #loading{
+            li:nth-child(1) {
+                transform: rotate3d(0,0,1,180deg);
+                transition: transform 1000ms ease-in-out;
+            }
+        }
+    }
+}
