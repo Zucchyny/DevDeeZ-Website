@@ -15,8 +15,8 @@
     justify-self: center;
 
     @include xs {
-        display: flex;
-        justify-self: left;
+        display: block ;
+        justify-self: right;
         width: 95%;
     }
 
@@ -40,12 +40,15 @@
         
         @include xs {
             top: 70px;
-            width: 100%;
+            width: 250px;
+            
+            display: grid;
+            grid-template-columns: auto auto;
             animation: none;
             transform-style: unset;
             flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-end;
+            justify-content: start;
+            align-items: baseline;
             
         }
         
@@ -130,7 +133,7 @@
                 color: #59665d;
                 
                 @include xs {
-                    font-size: 6vw;
+                    font-size: 4vw;
                 }
             }
         }
@@ -192,8 +195,8 @@
         }
 
         @include xs {
-            right: 10px;
-            top: 335px;
+            right:  calc((100vw)*0.14);
+            top: calc(((100vw)*1.31) - 63px);
             font-size: 20;
         }
     }
@@ -202,6 +205,7 @@
     .listMainDevice{
         display: flex;
         justify-content: center;
+
 
         .portfolio{
             position: relative;
@@ -223,10 +227,11 @@
             background-color: #ffffffcc;
             
             @include xs {
-                top: 400px;
-                left: -30px;
-                height: calc((100vw - 70px)*1.7);
-                width: calc((100vw - 70px));
+                top: calc((100vw)*1.31);
+                left: -58px;
+                height: calc((100vw - 70px)*1.35);
+                min-width: 365px;
+                min-height: calc(365px * 1.6);
 
                 border-top: inset 20px $bg-logo-color;
                 border-left: inset 20px $bg-logo-color;
@@ -257,6 +262,7 @@
                 font-size: 18;
 
                 @include xs {
+                    width: 200px;
                     overflow: hidden;
 
                     border-top: outset 5px $bg-logo-color;
