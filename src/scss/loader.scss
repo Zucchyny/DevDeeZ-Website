@@ -7,6 +7,28 @@
 
     display: flex;
 
+    .test{
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width : 100%;
+        z-index: 2;
+
+        .text{
+            display: flex;
+            width: 50%;
+            flex-direction: row;
+            font-family: 'Glacial-Indifference';
+            font-size: 60;
+
+            text-align: center;
+            line-height: normal;
+            justify-content: space-around;
+        }
+    }
+
     #loaderLeft{
         background: $bg-logo-color;
         height: 100vh;
@@ -18,19 +40,21 @@
 
         #loading{
             display: flex;
-            width: 50%;
+            width: 47%;
             flex-direction: row;
             justify-content: space-between;
             
             position: relative;
-            right: -21px;
 
             font-family: 'Glacial-Indifference';
             font-size: 60;
 
             text-align: center;
             line-height: normal;
-    
+
+            @include xs {
+                width: 70%;
+            }
     
             li:nth-child(1) {
                 animation: blur360 3s ease 0000ms infinite; 
@@ -51,6 +75,7 @@
         background: $bg-logo-color;
         height: 100vh;
         width: 50%;
+        border-left: solid white 1px;
 
         display: flex;
         justify-content: start;
@@ -65,12 +90,15 @@
             justify-content: space-between;
             
             position: relative;
-            left: -21px;
+            left: -19px;
 
             font-family: 'Glacial-Indifference';
             font-size: 60;
             text-align: center;
-    
+
+            @include xs {
+                width: 70%;
+            }
     
             li:nth-child(1) {
                 animation: blur360 3s ease 0600ms infinite; 
