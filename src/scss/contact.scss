@@ -2,14 +2,14 @@
 @import '../assets/fonts/webfonts/stylesheet.css';
 
 
-#info{
+#contact{
     position: absolute;
-    top: 990px;
+    top: 3600px;
     width: 100%;
     height: max-content;
     z-index: 3;
 
-    grid-column: 1 / 5;
+    grid-column: 4/6;
 
     background: $bg-logo-color;
     padding: 10px;
@@ -21,12 +21,9 @@
     
     @include xs {
         z-index: 4;
-        width: 95%;
+        width: 100%;
         
-        grid-column: 1 / 6;
-    }
-    @include sm {
-        left: 100px;
+        grid-column: 2 / 6;
     }
     @include md {
         padding: 20px;
@@ -38,7 +35,7 @@
         border-bottom-right-radius: 35px;
     }
     @include lg {
-        grid-column: 1 / 4;
+        grid-column: 4 / 6;
     }
 
     transform: translate3d(0,0,0);
@@ -71,15 +68,36 @@
         }
     }
 
+    
     p{
+        display: flex;
+        flex-direction: column;
         position: relative; 
-
+        
         font-family: 'Glacial-Indifference';
         font-size: 15;
         width: 100%;
         text-align: justify;
-        text-indent: 50px;
-        line-height: 51px;
+
+        a{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-top: 30px;
+            color: $bg-color;
+
+            #mail{
+                width: 30px;
+                height: 30px;
+                margin-right: 20px;
+
+                @include md {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+        
 
         @include md {
             font-size: 20;
@@ -89,4 +107,3 @@
         }
     }
 }
-

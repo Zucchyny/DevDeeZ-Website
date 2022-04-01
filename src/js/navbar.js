@@ -9,6 +9,7 @@ export default class Navbar {
         let btnLobby = document.querySelector('#toAccueil');
         let btnInfo = document.querySelector('#toInfo');
         let btnPortfolio = document.querySelector('#toPortfolio');
+        let btnContact = document.querySelector('#toContact');
 
         let headerOffset = 100;
 
@@ -26,6 +27,7 @@ export default class Navbar {
         btnLobby.addEventListener('click', () => {scroll('toLobby');});
         btnInfo.addEventListener('click', () => {scroll('toInfo');});
         btnPortfolio.addEventListener('click', () => {scroll('toPortfolio');});
+        btnContact.addEventListener('click', () => {scroll('toContact');});
 
         function navHeight () {
             let navheight = (window.innerHeight-100) ;
@@ -64,6 +66,15 @@ export default class Navbar {
                     });                 
                 } else if (scrollTo == 'toPortfolio') {
                     let style= getComputedStyle(portfolioContainer);
+                    elementPosition = parseInt(style.top);
+                    offsetPosition = elementPosition - headerOffset - 50;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });  
+                } else if (scrollTo == 'toContact') {
+                    let style= getComputedStyle(contact);
                     elementPosition = parseInt(style.top);
                     offsetPosition = elementPosition - headerOffset - 50;
                     

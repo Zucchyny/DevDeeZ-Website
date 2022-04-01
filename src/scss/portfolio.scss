@@ -4,7 +4,7 @@
 #portfolioContainer{
     position: relative;
     top: 2000px ;
-    z-index: 4;
+    z-index: 3;
 
     width: 90%;
     height: 1000px;
@@ -95,12 +95,18 @@
                 text-align: center;
             }
             
-            #lsn{
+            #nnews{
                 cursor: pointer;
-                font-family: 'Helvetica' ;
+                font-family: 'Roboto' ;
                 font-size: 1.3vw;
-                font-weight: bold;
-                color: #a8341d;
+
+                #color1{
+                    color: #02b1ce;
+                }
+
+                #color2{
+                    color: #002e48;
+                }
                 
                 @include xs {
                     font-size: 3vw;

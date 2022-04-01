@@ -26,9 +26,7 @@ body {
     // display: grid;
     // grid-template-columns: repeat(12, 1fr);
 
-    .container{
-      z-index: 10;
-    }
+    
 
     .upper{
       text-transform: uppercase;
@@ -51,7 +49,7 @@ body {
   @media (min-width: 600px) { @content; }
 }
 @mixin md {
-  @media (min-width: 900px) { @content; }
+  @media (min-width: 1000px) { @content; }
 }
 @mixin lg {
   @media (min-width: 1200px) { @content; }
