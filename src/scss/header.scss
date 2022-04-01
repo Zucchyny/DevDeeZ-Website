@@ -8,7 +8,7 @@ header {
     width: 100vw;
     height: 100px;
     max-height: 100px;
-    z-index: 100;
+    z-index: 5;
 
     display: grid;
     grid-template-columns: 100px 1fr 1fr 1fr 1fr;
@@ -18,16 +18,21 @@ header {
     color: white;
 
     @include xs {
+        z-index: 3;
         grid-template-columns: 70px 1fr 1fr 1fr 1fr;
     }
 
     .button-menu{
         grid-column: 1 ;
         width: 100%;
-        height: 100%;
-        z-index: 20;
+        height: 100px;
+        z-index: 2;
 
         @include xs {
+            position: absolute;
+            top: 0;
+            height: 70px;
+            width: 70px;
             border-bottom: 3px solid $primary-color;
         }
 
@@ -66,7 +71,6 @@ header {
 
             width: 100px;
             height: 100px;
-            z-index: -1;
 
             @include xs {
                 width: 70px;
@@ -96,6 +100,26 @@ header {
             
             transition: transform 250ms ease-in;
         }
+
+        .menu{
+            margin-top: 100px;
+            width: 100%;
+            height: calc(100vh - 100px);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+            font-family: 'Glacial-Indifference';
+            font-size: 50;
+            color: $bg-color;
+
+            transition: transform 1000ms ease-in-out, filter 1000ms ease-in-out;
+
+            @include xs {
+                height: calc(100vh - 70px);
+                margin-top: 70px;
+            }
+        }
         
     }
     .button-menu:hover{
@@ -113,7 +137,9 @@ header {
     }
     
         
-    h1 {
+    h1 {   
+        position: absolute;
+        top: 0;
         grid-column: 2/4 ;
         width: 100%;
         height: 100px;
@@ -152,11 +178,15 @@ header {
     }
     
     .slogan{
+        position: absolute;
+        top: 0;
         grid-column: 4/6 ;
         width: 100%;
-        height: 100%;
+        height: 100px;
 
         @include xs {
+            top:70px;
+            height: 50px;
             padding-top: 7px;
             padding-bottom: 7px;
             padding-left: 0px;
