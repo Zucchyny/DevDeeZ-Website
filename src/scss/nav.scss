@@ -44,7 +44,7 @@ aside {
 
         @include xs {
             width: calc((100vw - 50px));
-            transform: translate3d(calc( 77px +(-1*(100vw - 50px))),0,0) ;
+            transform: translate3d(calc( 77px + (-1*(100vw - 50px))),0,0) ;
         }
 
         @include lg {
