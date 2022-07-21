@@ -3,7 +3,7 @@ export default class Navbar {
         let carousel = document.querySelector('.carouselContainer');
         let nbChild=carousel.getElementsByTagName('LI').length ;
 
-        var pSelected = 7;
+        var pSelected = 1;
         console.log('init Portfolio');
         init();
         
