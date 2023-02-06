@@ -1,0 +1,32 @@
+@import 'scss/base';
+@import '../assets/fonts/webfonts/stylesheet.css';
+
+aside{
+    height: 5152px;
+    width: 100px;
+    background-color: $bg-logo-color;
+
+    transition: width 500ms ease-in-out;
+
+    #gearBelt{
+      width: 108px;
+      height: 100%;
+      background-image: 
+        repeating-linear-gradient(0deg, $bg-logo-color, $bg-logo-color 50px, transparent 10px, transparent 20px, $bg-logo-color 20px),
+        repeating-linear-gradient(90deg, $bg-logo-color, $bg-logo-color 50px, transparent 10px, transparent 20px, $bg-logo-color 20px), 
+        repeating-linear-gradient(180deg, $bg-logo-color, $bg-logo-color 17.5px, transparent 10px, transparent 41.65px, $bg-logo-color 20px), 
+        repeating-linear-gradient(270deg, $bg-logo-color, $bg-logo-color 50px, transparent 10px, transparent 20px, $bg-logo-color 20px); 
+      background-size: 0, 0, 8px 100% , 0; 
+      background-position: 0 0, 0 0, 100% 0, 0 100%; 
+      background-repeat: no-repeat; 
+
+      transition: width 500ms ease-in-out;
+      @include xs {
+        width: 80px;
+      }
+    }
+
+    @include xs {
+      width: 72px;
+    }
+  }

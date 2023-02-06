@@ -2,7 +2,6 @@ import * as THREE from 'three';
 
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
 
@@ -227,7 +226,7 @@ export default class Beaver {
 
         }
 
-        function onPointerMove(e) {
+                function onPointerMove(e) {
 
             if ( e.isPrimary === false ) return;
 

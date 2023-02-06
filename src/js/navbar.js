@@ -1,18 +1,24 @@
+import { EqualStencilFunc } from "three";
+
 export default class Navbar {
     constructor() {
         let nav = document.querySelector('#nav-w');
         let gear = document.querySelector('#gear');
-        let info = document.querySelector('#info');
-        let portfolio = document.querySelector('#portfolio');
+        let info = document.querySelector('#anchor-info');
+        let portfolio = document.querySelector('#anchor-portfolio');
+        let contact = document.querySelector('#anchor-contact');
 
         let btnMenu = document.querySelector('.button-menu');
-        let btnLobby = document.querySelector('#toAccueil');
-        let btnInfo = document.querySelector('#toInfo');
-        let btnPortfolio = document.querySelector('#toPortfolio');
-        let btnContact = document.querySelector('#toContact');
 
-        let headerOffset = 100;
+        let btnUp = document.querySelector('#up');
+        let btnDown = document.querySelector('#down');
 
+        let btnLobby = document.querySelector('#goAccueil');
+        let btnInfo = document.querySelector('#goInfo');
+        let btnPortfolio = document.querySelector('#goPortfolio');
+        let btnContact = document.querySelector('#goContact');
+
+        let cursor = 1;
 
         navHeight();
         gearRotate();
@@ -23,15 +29,39 @@ export default class Navbar {
         window.addEventListener("scroll",() => {gearRotate();});
 
         btnMenu.addEventListener('click', () => {document.body.classList.toggle("menu-open");});
+
+        btnUp.addEventListener('click', () => {
+            if(cursor > 0){
+                console.log("u");
+                scroll(cursor - 1);
+                cursor -=1;
+            }
+        });
+        btnDown.addEventListener('click', () => {
+            if(cursor < 4){
+                console.log("d");
+                scroll(cursor + 1);
+                cursor +=1;
+            }
+        });
         
-        btnLobby.addEventListener('click', () => {scroll('toLobby');});
-        btnInfo.addEventListener('click', () => {scroll('toInfo');});
-        btnPortfolio.addEventListener('click', () => {scroll('toPortfolio');});
-        btnContact.addEventListener('click', () => {scroll('toContact');});
+        btnLobby.addEventListener('click', () => {scroll(1);});
+        btnInfo.addEventListener('click', () => {scroll(2);});
+        btnPortfolio.addEventListener('click', () => {scroll(3);});
+        btnContact.addEventListener('click', () => {scroll(4);});
 
         function navHeight () {
-            let navheight = (window.innerHeight-100) ;
+            let navheight = 0;
+            if (window.innerWidth < 600) {
+                navheight = (window.innerHeight-120) ;
+            }
+            else {
+                navheight = (window.innerHeight-100) ;
+            }
+
             nav.style.height = navheight ;
+
+
         } 
         
         function gearRotate() {
@@ -40,49 +70,27 @@ export default class Navbar {
         }
 
         function scroll(scrollTo) {
-            document.body.classList.toggle("menu-open");
-
-            let elementPosition =0;
-            let offsetPosition =0;
-
-            
             setTimeout(() => {
-                if(scrollTo == 'toLobby'){
-                    elementPosition = 0;
-                    offsetPosition = elementPosition - headerOffset - 50;
-                    
+                if(scrollTo == 1){
                     window.scrollTo({
-                        top: offsetPosition,
+                        top: 0,
                         behavior: "smooth"
                     }); 
-                } else if (scrollTo == 'toInfo') {
-                    let style= getComputedStyle(info);
-                    elementPosition = parseInt(style.top);
-                    offsetPosition = elementPosition - headerOffset - 50;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
+                } else if (scrollTo == 2) {
+                    info.scrollIntoView({
                         behavior: "smooth"
-                    });                 
-                } else if (scrollTo == 'toPortfolio') {
-                    let style= getComputedStyle(portfolioContainer);
-                    elementPosition = parseInt(style.top);
-                    offsetPosition = elementPosition - headerOffset - 50;
+                    });
                     
-                    window.scrollTo({
-                        top: offsetPosition,
+                } else if (scrollTo == 3) {
+                    portfolio.scrollIntoView({
                         behavior: "smooth"
-                    });  
-                } else if (scrollTo == 'toContact') {
-                    let style= getComputedStyle(contact);
-                    elementPosition = parseInt(style.top);
-                    offsetPosition = elementPosition - headerOffset - 50;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
+                    });
+                } else if (scrollTo == 4) {
+                    contact.scrollIntoView({
                         behavior: "smooth"
-                    });  
-            }},700);
+                    });
+                }
+            },700);
         }
     }
 }

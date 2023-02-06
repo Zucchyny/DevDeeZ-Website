@@ -1,213 +1,508 @@
 @import 'scss/base';
 @import '../assets/fonts/webfonts/stylesheet.css';
 
-header {
-    position: fixed;
-    top : 0px;
-
-    width: 100vw;
-    height: 100px;
-    max-height: 100px;
-    z-index: 5;
-
-    display: grid;
-    grid-template-columns: 100px 1fr 1fr 1fr 1fr;
-    justify-items: center;
-    align-items: center;
+.fixe{
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 0px;
     
-    color: white;
+    header {
+        position: relative;
+        top : 0px;
+    
+        width: 100vw;
+        height: 100px;
+        max-height: 100px;
+        z-index: 5;
+    
+        display: grid;
+        grid-template-columns: 100px 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        
+        color: white;
+    
+        @include xs {
+            z-index: 3;
+            grid-template-columns: 72px 1fr 1fr 1fr 1fr;
+        }
+    
+        .button-menu{
+            grid-column: 1 ;
+            width: 100%;
+            height: 100px;
+            z-index: 2;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+    
+            @include xs {
+                position: absolute;
+                top: 0;
+                height: 70px;
+                width: 72px;
+                border-bottom: 3px solid $primary-color;
+            }
+    
+            cursor: pointer;
+            justify-self: left;
+    
+            border-bottom: 3px solid transparent;
+    
+            transition: border-bottom 500ms;
+    
+            #logo {
+                position: absolute;
+                top: 0;
+                left: 0;
+                
+                width: 100px;
+                height: 100px;
+                z-index: 0;
+    
+                @include xs {
+                    width: 70px;
+                    height: 70px;
+                }
+    
+                transform: rotateY(0deg);
+    
+                transition: transform 250ms 200ms ease-out;
+                
+            }
+    
+            #menu {
+                position: absolute;
+                top: 0;
+                left: -1;
+    
+                width: 100px;
+                height: 100px;
+    
+                @include xs {
+                    width: 70px;
+                    height: 70px;
+                }
+    
+                transform: rotateY(90deg);
+    
+                transition: transform 250ms ease-in;  
+            }
+        
+            #close {
+                position: absolute;
+                top:0;
+                left: -1;
+    
+                width: 100px;
+                height: 100px;
+                z-index: -2;
+    
+                @include xs {
+                    width: 70px;
+                    height: 70px;
+                }
+    
+                transform: rotateY(90deg);
+                
+                transition: transform 250ms ease-in;
+            }
+    
+            .menu{
+                margin-top: 100px;
+                width: 100px;
+                height: calc(100vh - 100px);
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: end;
+    
+                transition: filter 500ms ease-in-out;
 
-    @include xs {
-        z-index: 3;
-        grid-template-columns: 70px 1fr 1fr 1fr 1fr;
+                #nav-container {
+                    width: 0px;
+                    height: 100%;
+                
+                
+                    #nav-w {
+                        width: 100%;
+                        height: 100%;
+                        
+                        display: flex;
+                        flex-direction: column;
+                        background-color: $bg-logo-color;
+                        
+                        font-size: 250%;
+                        font-family: 'Glacial-Indifference';
+
+                        transition: width 500ms ease-in-out;
+                                    
+                        .nav {
+                            width: 0;
+                            height: 100%;
+                
+                            display: flex;
+                            pointer-events: none;
+                            justify-content: center;
+                            align-items: center;
+                            padding-left: 3px;
+                            padding-right: 3px;
+                
+                            color: transparent;
+                            
+                            transition: width 500ms ease-in-out, color 500ms;
+                        }        
+                    }
+                }
+
+                #text-container{
+                    height: 100%;
+                    width: 100px;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    font-family: 'Glacial-Indifference';
+                    font-size: 50;
+                    color: $bg-color;
+
+                    transform: translate3d(0, 0, 0);
+                    transition: transform 500ms ease-in-out, filter 500ms ease-in-out;
+
+                    @include xs{
+                        width: 72px;
+                    }
+                }
+    
+                @include xs {
+                    width: 72px;
+                    height: calc(100vh - 120px);
+                    margin-top: 120px;
+                }
+            }
+            
+        }
+        .button-menu:hover{
+            #logo{
+                transform: rotateY(90deg);
+    
+                transition: transform 250ms ease-in,
+            }
+    
+            #menu{
+                transform: rotateY(180deg);
+    
+                transition: transform 250ms 200ms ease-out,
+            } 
+        }
+            
+        h1 {   
+            position: absolute;
+            top: 0;
+            grid-column: 2/4 ;
+            width: 100%;
+            height: 100px;
+    
+            @include xs {
+                height: 70px;
+                grid-column: 2/6;
+                text-align: center;
+                font-size: 400%;
+                border-bottom: 3px solid $primary-color;
+            }
+    
+            font-family: 'MoonTime' ;
+            font-size: 500%;
+            text-align: end;
+            padding-top: 5px;
+            padding-right: 30px;
+            padding-left: 30px;
+            background-color: $bg-logo-color;
+    
+            border-left: 7px solid rgba(255, 255, 255, 0);
+            background-clip: padding-box;
+    
+            transition: border-left 1000ms;
+    
+            #firstlogo{
+                color: $primary-color;
+            }
+            
+            #secondlogo{
+                color: white;
+            }
+            #thirdlogo{
+                color: $secondary-color;
+            }
+        }
+        
+        .slogan{
+            position: absolute;
+            top: 0;
+            grid-column: 4/6 ;
+            width: 100%;
+            height: 100px;
+    
+            @include xs {
+                top:70px;
+                height: 50px;
+                padding-top: 7px;
+                padding-bottom: 7px;
+                padding-left: 0px;
+                grid-column: 1/6;
+                text-align: center;
+                border-left: none;
+                transition: border-left 500ms ease-in;
+            }
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+    
+            font-family: 'Glacial-Indifference';
+            font-size: 20;
+            border-left: 3px solid $primary-color ;
+            padding-left: 25px;
+            background-color: $bg-logo-color;
+    
+            @include sm{
+                font-size: 12;
+            }
+        }
     }
 
-    .button-menu{
-        grid-column: 1 ;
-        width: 100%;
-        height: 100px;
+    #gear {
+        position: absolute;
+        width: 321px;
+        height: 321px;
+        top: -27px;
+        left: 101px;
         z-index: 2;
 
+        transition: left 500ms ease-in-out;
+
         @include xs {
-            position: absolute;
-            top: 0;
-            height: 70px;
-            width: 70px;
-            border-bottom: 3px solid $primary-color;
+            left: 72px;
         }
-
-        cursor: pointer;
-        justify-self: left;
-        background-color: $bg-logo-color;
-
-        border-bottom: 3px solid transparent;
-
-        transition: border-bottom 500ms;
-
-        #logo {
-            position: absolute;
-            top: 0;
-            left: 0;
-            
-            width: 100px;
-            height: 100px;
-            z-index: 0;
-
-            @include xs {
-                width: 70px;
-                height: 70px;
-            }
-
-            transform: rotateY(0deg);
-
-            transition: transform 250ms 200ms ease-out;
-            
-        }
-
-        #menu {
-            position: absolute;
-            top: 0;
-            left: -1;
-
-            width: 100px;
-            height: 100px;
-
-            @include xs {
-                width: 70px;
-                height: 70px;
-            }
-
-            transform: rotateY(90deg);
-
-            transition: transform 250ms ease-in;  
-        }
-    
-        #close {
-            position: absolute;
-            top:0;
-            left: -1;
-
-            width: 100px;
-            height: 100px;
-            z-index: -2;
-
-            @include xs {
-                width: 70px;
-                height: 70px;
-            }
-
-            transform: rotateY(90deg);
-            
-            transition: transform 250ms ease-in;
-        }
-
-        .menu{
-            margin-top: 100px;
-            width: 100%;
-            height: calc(100vh - 100px);
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: space-around;
-            font-family: 'Glacial-Indifference';
-            font-size: 50;
-            color: $bg-color;
-
-            transition: transform 1000ms ease-in-out, filter 1000ms ease-in-out;
-
-            @include xs {
-                height: calc(100vh - 70px);
-                margin-top: 70px;
-            }
-        }
-        
     }
-    .button-menu:hover{
-        #logo{
-            transform: rotateY(90deg);
 
-            transition: transform 250ms ease-in,
-        }
-
-        #menu{
-            transform: rotateY(180deg);
-
-            transition: transform 250ms 200ms ease-out,
-        } 
-    }
-    
-        
-    h1 {   
+    #buttonUpDown{
         position: absolute;
-        top: 0;
-        grid-column: 2/4 ;
-        width: 100%;
+        width: 100px;
         height: 100px;
-
-        @include xs {
-            height: 70px;
-            grid-column: 2/6;
-            text-align: center;
-            font-size: 400%;
-            border-bottom: 3px solid $primary-color;
-        }
-
-        font-family: 'MoonTime' ;
-        font-size: 500%;
-        text-align: end;
-        padding-top: 5px;
-        padding-right: 30px;
-        padding-left: 30px;
-        background-color: $bg-logo-color;
-
-        border-left: 7px solid rgba(255, 255, 255, 0);
-        background-clip: padding-box;
-
-        transition: border-left 1000ms;
-
-        #firstlogo{
-            color: $primary-color;
-        }
-        
-        #secondlogo{
-            color: white;
-        }
-        #thirdlogo{
-            color: $secondary-color;
-        }
-    }
-    
-    .slogan{
-        position: absolute;
-        top: 0;
-        grid-column: 4/6 ;
-        width: 100%;
-        height: 100px;
-
-        @include xs {
-            top:70px;
-            height: 50px;
-            padding-top: 7px;
-            padding-bottom: 7px;
-            padding-left: 0px;
-            grid-column: 1/6;
-            text-align: center;
-            border-left: none;
-            transition: border-left 500ms ease-in;
-        }
+        bottom: -95vh;
+        right: 50px;
+        z-index: 2;
 
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
 
-        font-family: 'Glacial-Indifference';
-        font-size: 12;
-        border-left: 3px solid $primary-color ;
-        padding-left: 25px;
-        background-color: $bg-logo-color;
-
-        @include md{
-            font-size: 20;
+        @include xs{
+            display: none;
         }
+        @include sm {
+            width: 75px;
+            height: 75px;
+            right: 25px;
+        }
+        
+        #up{
+            z-index: 1;
+            width: 100%;
+            height: 21%;
+            cursor: pointer;
+        }
+        #drag{
+            width: 100%;
+            height: 58%;
+        }
+        #down{
+            z-index: 1;
+            width: 100%;
+            height: 21%;
+            cursor: pointer;
+        }
+        #upDown{
+            z-index: 0;
+            position: absolute;
+        }
+    }
+    
+    #background {
+        width: 100vw;
+        position: sticky;
+        z-index: 1;
+        height: 100vh;
+    
+        transform: translate3d(108px,0px,0px);    
+        filter: invert(0%);
+        transition: transform 500ms ease-in-out, filter 700ms ease-in-out;
+    
+        @include xs{
+            transform: translate3d(80px,0px,0px);
+        }
+    }        
+}
+
+// <-------------------------------|  MENU OPEN  |--------------------------------> //
+
+body.menu-open {
+    background-color: $bg-color-invert;
+
+    transition: background-color 500ms ease-in-out;
+    
+    .fixe{
+        header{
+            .button-menu {
+                border-bottom: 3px solid $primary-color;
+                
+                transition: border-bottom 700ms;
+                
+                #menu {
+                    z-index: 0;
+                    
+                    transform: rotateY(0deg);
+                    
+                    transition: transform 250ms 200ms ease-out; 
+                }
+        
+                #logo {
+                    filter: opacity(0%);
+                }
+                
+                #close {
+                    z-index: -1;
+                    filter: opacity(100%);
+        
+                    transform: rotateY(90deg);
+                    
+                    transition: transform 250ms ease-in;
+                }
+    
+                .menu {
+
+                    #nav-container {    
+                        transform: translate3d(0px,0,0) ;
+                        color: $primary-color;
+                
+                        transition: transform 500ms ease-in-out;
+                
+                        #nav-w {
+                            width: 500px;
+                
+                            .nav{       
+                                width: calc(100% - 100px);      
+                                pointer-events: visible;
+                                cursor: pointer;
+                
+                                color: $primary-color;
+                                transform: translate3d(0,0,0);
+                                border-left: 3px solid $primary-color;
+                                border-radius: 0px;
+                
+                                transition: width 500ms ease-in-out, color 500ms, transform 500ms ease-in-out, border-left 500ms ease-in, border-radius 1000ms;
+
+                                @include xs {
+                                    width: calc(100% - 72px);
+                                }
+                            }
+                            
+                            @include xs {
+                                width: 100vw;
+                            }
+
+                            .nav:hover {
+                
+                                color: $secondary-color;
+                                border-left: 7px solid $secondary-color;
+                                border-radius: 25px;
+                
+                                transition:transform 500ms, color 500ms, border-left 500ms, border-radius 100ms;
+                            }
+
+                            
+                        }
+                    }
+
+                    #text-container{
+                        filter: invert(60%);
+                        transform: translate3d(400px, 0, 0);
+                        transition: transform 500ms ease-in-out, filter 500ms ease-in-out;
+
+                        @include xs{
+                            transform: translate3d(calc(100vw - 72px), 0, 0);
+                        }
+                    }
+            
+                    transition: transform 500ms ease-in-out, filter 500ms ease-in-out;
+                }
+            }
+            
+            .button-menu:hover {
+                #menu {
+                    transform: rotateY(90deg);
+        
+                    transition: transform 250ms ease-in;
+                }
+        
+                #close {
+                    transform: rotateY(180deg);
+        
+                    transition: transform 250ms 200ms ease-out;
+                }
+            }
+        
+            h1 {
+                border-left: 3px solid $primary-color;
+        
+                transition: border-left 500ms;
+            }
+    
+            .slogan {
+                @include xs{
+                    border-left: 3px solid $primary-color;
+    
+                    transition: border-left 500ms ease-in;
+                }
+            }
+        }
+
+        #gear{
+            left: 500px;
+
+            transition: left 500ms ease-in-out;
+        }
+
+        #background {
+            filter: invert(60%);
+            transform: translate3d(508px,0,0);
+            
+            transition: transform 500ms ease-in-out, filter 500ms ease-in-out;
+        }
+    }
+    
+    aside{
+        width: 500px;
+            
+        transition: width 500ms ease-in-out;
+
+        #gearBelt{
+            width: 508px;
+            
+            transition: width 500ms ease-in-out;
+        }
+
+        @include xs {
+            width: 100%;
+        }
+    }
+
+    main{
+        width: calc(100vw - 500px);
+        
+        transition: width 500ms ease-in-out;
     }
 }

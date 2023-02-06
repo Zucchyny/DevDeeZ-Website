@@ -1,43 +1,36 @@
 /* Theming */
 
 $bg-logo-color: #291b25;    /* Dark-brown */
+$dark-brown: #1b1219;    /* Dark-brown outset style */
 $primary-color: #51abb2;  /* Light-blue */
 $secondary-color: #f14902;  /* Orange */
 $bg-color: #dacaa4;  /* Beige */
 $bg-color-invert: invert($bg-color, 60%); /* Blue-Gray */
 
 
+html{
+  height: 100%;
 
-body {
   overflow-x: hidden;
   overflow-y: scroll;
-
-  background-color: $bg-color;
-  color: white;
-  scroll-behavior: smooth;
-
-  main {
-    position: absolute;
+  body {
+    height: max-content;
     width: 100vw;
-    padding: 0 0;
-
-    display: grid;
-    grid-template-columns: 100px 1fr 1fr 1fr 1fr;
-    // display: grid;
-    // grid-template-columns: repeat(12, 1fr);
-
-    
-
+  
+  
+    background-color: $bg-color;
+    color: white;
+    scroll-behavior: smooth;
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  
+    transition: background-color 500ms ease-in-out;
+  
     .upper{
       text-transform: uppercase;
     }
-
-    .button{
-      :hover{
-        border-color: $secondary-color;
-      }
-    }
-
   }
 }
 
@@ -46,10 +39,10 @@ body {
   @media (max-width: 599px) { @content; }
 }
 @mixin sm {
-  @media (min-width: 600px) { @content; }
+  @media (max-width: 999px) { @content; }
 }
 @mixin md {
-  @media (min-width: 1000px) { @content; }
+  @media (max-width: 1199px) { @content; }
 }
 @mixin lg {
   @media (min-width: 1200px) { @content; }
@@ -59,41 +52,6 @@ body {
 }
 @mixin screen-min($width) {
   @media (min-width:$width) { @content }
-}
-
-@mixin recolor($color: #000, $opacity: 1) {
-  $r: red($color) / 255;
-  $g: green($color) / 255;
-  $b: blue($color) / 255;
-  $a: $opacity;
-
-  // grayscale fallback if SVG from data url is not supported
-  $lightness: lightness($color);
-  filter: saturate(0%) brightness(0%) invert($lightness) opacity($opacity);
-
-  // color filter
-  $svg-filter-id: "recolor";
-  filter: url('data:image/svg+xml;utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg">\
-      <filter id="#{$svg-filter-id}" color-interpolation-filters="sRGB">\
-        <feColorMatrix type="matrix" values="\
-          0 0 0 0 #{$r}\
-          0 0 0 0 #{$g}\
-          0 0 0 0 #{$b}\
-          0 0 0 #{$a} 0\
-        "/>\
-      </filter>\
-    </svg>\
-    ##{$svg-filter-id}');
-}
-
-@keyframes rotate360 {
-  from {
-    transform: rotate3d(0, 1, 0, 0deg);
-  }
-  to {
-    transform: rotate3d(0, 1, 0, -360deg);
-  }
 }
 
 @keyframes blur360 {
@@ -108,3 +66,20 @@ body {
   }
 }
 
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  45% {
+    transform: translate3d(0, 22px, 0);
+  }
+  50% {
+    transform: translate3d(0, 20px, 0);
+  }
+  55% {
+    transform: translate3d(0, 22px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

@@ -1,38 +1,47 @@
 <html>
 <include src="src/partials/head.html"></include>
     
-<body>
-    <main>
-        <div id="loader">
-            <div id="loaderLeft">
-                <ul id="loading" class="upper">
-                    <li>l</li>
-                    <li>o</li>
-                    <li>a</li>
-                    <li>&nbsp;</li>
-                </ul>
-            </div>
-            <div id="loaderRight">
-                <ul id="loading" class="upper">
-                    <li>d</li>
-                    <li>i</li>
-                    <li>n</li>
-                    <li>g</li>
-                </ul>
-            </div>
-        </div>
-        
+<div id="loader">
+    <div id="loaderLeft">
+        <ul id="loading" class="upper">
+            <li>l</li>
+            <li>o</li>
+            <li>a</li>
+            <li>&nbsp;</li>
+        </ul>
+    </div>
+    <div id="loaderRight">
+        <ul id="loading" class="upper">
+            <li>d</li>
+            <li>i</li>
+            <li>n</li>
+            <li>g</li>
+        </ul>
+    </div>
+</div>
 
-        <header class="container">
+<body>
+    <div class="fixe">
+        <header>
             <div class="button button-menu">
-                <img class="button" id="logo" src="assets/images/logo.png" alt="logo">
-                <img class="button" id="menu" src="assets/images/menu.png" alt="open menu">
-                <img class="button" id="close" src="assets/images/cross.PNG" alt="close">
+                <img id="logo" src="assets/images/logo.png" alt="logo">
+                <img id="menu" src="assets/images/menu.png" alt="open menu">
+                <img id="close" src="assets/images/cross.PNG" alt="close">
                 <div class="menu">
-                    <span>M</span>
-                    <span>E</span>
-                    <span>N</span>
-                    <span>U</span>
+                    <div id="nav-container">
+                        <nav id="nav-w">
+                            <a id="goAccueil" class="nav upper">accueil</a>
+                            <a id="goInfo" class="nav upper">a&nbsp;propos</a>
+                            <a id="goPortfolio" class="nav upper">portfolio</a>
+                            <a id="goContact" class="nav upper">contact</a>
+                        </nav>    
+                    </div>
+                    <div id="text-container">
+                        <span>M</span>
+                        <span>E</span>
+                        <span>N</span>
+                        <span>U</span>
+                    </div>
                 </div>
             </div>
             <h1><span class="upper" id="firstlogo">d</span>ev<span class="upper" id="secondlogo">d</span>ee<span class="upper" id="thirdlogo">z</span></h1>
@@ -41,37 +50,54 @@
                 <h2 class="upper" id="second">faire de votre projet une réalité</h2>
             </div>
         </header>
-        <include src="src/partials/nav.html"></include>
 
+        <img id="gear" src="assets/images/gear.svg" alt="engrenage">
+        <div id="buttonUpDown">
+            <a id="up"></a>
+            <a id="drag"></a>
+            <a id="down"></a>
+            <img id="upDown" src="assets/images/Bouton Nav.svg" alt="navigation">
+        </div>
+        
+        <canvas id="background"></canvas>        
+    </div>
+    
+    <aside>
+        <div id="gearBelt"></div>
+    </aside>
+    
+    <main>
+        <img id="tipsdown" src="assets/images/Down.svg" alt="flèche invitant à descendre pour continuer la navigation">
+        
         <div id="info" class="container">
+            <div id="anchor-info" style="position: absolute; top: -200px; left: 0"></div>
             <h2 class="upper">a propos</h2>
             <p>DevDeeZ est une société développant des site web pour les professionnels comme pour les 
                 particuliers. </p>
             <p>Nous transformerons vos attentes en un cahier des charges puis en une maquette pour mettre des 
                 mots sur vos idées et des images sur ces mots.</p> 
-            <p>Ensuite viens l’étape du développement du software : soit via WordPress pour les petits budgets et les délais sérrés, 
+            <p>Ensuite viens l'étape du développement du software : soit via WordPress pour les petits budgets et les délais sérrés, 
                 soit en codant pour des sites ultra personnalisés et une livraison dans les meilleures conditions possibles.</p>
             <p>Nous vous invitons à consulter notre PortFolio ci-dessous pour voir nos réalisations. <!-- mais aussi 
                     notre catalogue pour des livraisons en un temps record ! --> </p>
         </div>
 
         <div id="portfolioContainer" class="container">
+            <div id="anchor-portfolio" style="position: absolute; top: -200px; left: 0"></div>
             <include src="src/partials/carousel.html"></include>
         </div>
 
         <div id="contact" class="container">
+            <div id="anchor-contact" style="position: absolute; top: -200px; left: 0"></div>
             <h2 class="upper">contact</h2>
             <p>
                 Interessé par un devis, un conseil ?
                 <a href="mailto:tristan.fourot@outlook.fr"> <img class="button" id="mail" src="assets/images/email.png" alt="contacter par mail"> Cliquez pour me contacter</a>
             </p>
-        </div>
-        
-        <canvas id="background"></canvas>
-        
-        <!-- <include src="src/partials/footer.html"></include> -->
-        
+        </div>        
     </main>
+
     <script src="src/index.js"></script>
 </body>
+
 </html>
