@@ -1,0 +1,236 @@
+@import 'scss/base';
+@import '../assets/fonts/webfonts/stylesheet.css';
+
+main{
+    width: calc(100vw - 108px); 
+    padding-top: calc(100vh + 400px);
+    padding-bottom: 550px;
+
+    display: grid;
+    grid-template-columns: 100%; 
+    grid-template-rows: max-content max-content max-content;
+    gap: 400px 0px; 
+    grid-template-areas: 
+        "."
+        "."
+        "."; 
+
+    
+    transition: width 500ms ease-in-out;
+
+    @include xs{
+        width : calc(100vw - 72px); 
+    }
+
+    #tipsdown {
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        top: 86vh;
+        right: 45vw;
+
+        filter: opacity(1);
+
+        transition: filter 500ms ease-in-out 10000ms;
+
+        animation: bounce 1500ms ease infinite; 
+    } 
+
+    #info{
+        width: 60vw;
+        height: max-content;
+        margin-top: 200px;
+    
+        background: $bg-logo-color;
+        padding: 10px;
+        border: solid 20px $dark-brown;
+        border-top-right-radius: 35px;
+        border-bottom-right-radius: 35px;
+        
+        @include xs {
+            width: 100%;
+        }
+    
+        transform: translate3d(0,0,0);
+            
+        transition: transform 1000ms ease-in-out;
+
+        @include lg {
+            padding: 20px;
+            border: solid 35px $dark-brown;
+        }
+    
+        h2{
+            position: absolute; 
+            top: -78px;
+            right: 20px;
+    
+            background: $bg-logo-color;
+            padding: 10px;
+            border-top: solid 20px $dark-brown;
+            border-left: solid 20px $dark-brown;
+            border-right: solid 20px $dark-brown;
+            border-radius: 10px;
+    
+            font-family: 'Glacial-Indifference';
+            font-size: 30;
+            font-weight: bold;
+    
+            @include lg {
+                top: -90px;
+                font-size: 40;
+            }
+            @include xs {
+                top: -65px;
+                font-size: 20;
+            }
+        }
+    
+        p{
+            position: relative; 
+    
+            font-family: 'Glacial-Indifference';
+            font-size: 15;
+            width: 100%;
+            text-align: justify;
+            text-indent: 50px;
+            line-height: 40px;
+    
+            @include md {
+                font-size: 20;
+            }
+            @include lg {
+                font-size: 25;
+                line-height: 50px;
+            }
+        }
+    }
+
+    #portfolioContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        
+        margin-top: 200px;
+
+        margin-bottom: 150px;
+
+        #deco{
+            width: 5%;
+            height: 90%;
+
+            border-top: solid 35px $dark-brown;
+            border-bottom: solid 35px $dark-brown;
+        }
+
+        #portfolio{
+            width: 80vw;
+
+            border: solid 40px $dark-brown;
+            border-radius: 20px;
+            background-color: #ffffffcc;
+                
+            @include xs {
+                border: solid 20px $dark-brown;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    #contact{
+        width: 40vw;
+        height: max-content;
+        
+        margin-top: 200px;
+
+        justify-self: end;
+    
+        background: $bg-logo-color;
+        padding: 10px;
+        border: solid 20px $dark-brown;
+        border-top-left-radius: 35px;
+        border-bottom-left-radius: 35px;
+        
+        @include xs {
+            width: 100%;
+        }
+        @include sm {
+            width: 80%;
+        }
+        @include lg {
+            padding: 20px;
+            border: solid 35px $dark-brown;
+        }
+    
+        transform: translate3d(0,0,0);
+            
+        transition: transform 1000ms ease-in-out;
+    
+        h2{
+            position: absolute; 
+            top: -78px;
+            right: 20px;
+    
+            background: $bg-logo-color;
+            padding: 10px;
+            border-top: solid 20px $dark-brown;
+            border-left: solid 20px $dark-brown;
+            border-right: solid 20px $dark-brown;
+            border-radius: 10px;
+    
+            font-family: 'Glacial-Indifference';
+            font-size: 30;
+            font-weight: bold;
+    
+            @include lg {
+                top: -90px;
+                font-size: 40;
+            }
+            @include xs {
+                top: -65px;
+                font-size: 20;
+            }
+        }
+    
+        
+        p{
+            display: flex;
+            flex-direction: column;
+            position: relative; 
+            
+            font-family: 'Glacial-Indifference';
+            font-size: 15;
+            width: 100%;
+            text-align: justify;
+    
+            a{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding-top: 30px;
+                color: $bg-color;
+    
+                #mail{
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 20px;
+    
+                    @include md {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+            
+    
+            @include md {
+                font-size: 20;
+            }
+            @include lg {
+                font-size: 25;
+            }
+        }
+    }
+}

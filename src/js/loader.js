@@ -11,7 +11,7 @@ export default class Loader {
 
         setTimeout(() => {
             loader.classList.add("loaded"); 
-        }, 4000);
+        }, 500);
         setTimeout(() => {
             loader.style.display="none";
         }, 9000);
